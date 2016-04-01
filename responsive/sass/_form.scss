@@ -1,0 +1,67 @@
+/* 
+ * Form styles 
+ *
+ * assuming a js class switcher to show different currency symbols
+ */
+
+form{
+  > div{
+    margin: 1em 0 1.5em;;
+    position: relative;
+  }
+  input, select{
+    display: block;
+    width: 100%;
+    border-radius: .25em;
+    border: 1px solid grey;
+    padding: .5em;
+  }
+  label[for="value"]{
+    &:after{
+      content: "";
+      position: absolute;
+      left: -1em;
+      top: 2.25em;
+    }
+    &.gbp:after { content: "\a3"; }
+    &.usd:after { content: "\24"; }
+    &.eur:after { content: "\20AC"; }
+  }
+  input[type="submit"]{
+    max-width: 150px;
+    background: $highlight;
+    color: $bg;
+    border: none;
+    margin: 2em auto;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+  }
+  label{
+    display: block;
+    margin-bottom: .5em;
+  }
+  .radios{
+    display: block;
+    .inputs{
+      input{
+        width: auto;
+        display: inline-block;
+      }
+    }
+    p{
+      width: 100%;
+    }
+    @media (min-width: 650px){
+      display: flex;
+      .inputs{
+        display: block;
+        width: 100%;
+      }
+      p{
+        margin: 0;
+        width: 60%;
+      }
+    }
+  }
+}

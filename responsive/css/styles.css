@@ -1,0 +1,153 @@
+/* 
+ * Type styles 
+ */
+body {
+  font-family: sans-serif;
+}
+
+h1, h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 21px;
+  margin-bottom: .5em;
+}
+
+p, label, input, select, option {
+  font-size: 13px;
+  margin: .5em 0;
+}
+
+/* 
+ * Layout styles 
+ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.currency-cta {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid grey;
+}
+.currency-cta > div {
+  display: block;
+  width: 100%;
+  padding: 2em;
+}
+@media (max-width: 400px) {
+  .currency-cta > div {
+    padding: 1em;
+  }
+}
+.currency-cta > div.order {
+  background: #014e97;
+  color: #fff;
+}
+.currency-cta > div.info h2 + p {
+  margin-bottom: 4em;
+}
+.currency-cta > div.info h3:before {
+  width: 0;
+  height: 0;
+  border-top: .5em solid transparent;
+  border-bottom: .5em solid transparent;
+  border-left: .5em solid grey;
+  content: '';
+  display: inline-block;
+  margin: 0 .25em 0 -.75em;
+}
+.currency-cta > div.info p.terms {
+  font-size: .625em;
+  margin-top: 6em;
+}
+@media (min-width: 650px) {
+  .currency-cta {
+    width: 95vw;
+    margin: 2em auto;
+    display: flex;
+  }
+  .currency-cta > div {
+    display: inline-block;
+    width: 55%;
+  }
+  .currency-cta > div.order {
+    width: 45%;
+  }
+}
+
+/* 
+ * Form styles 
+ *
+ * assuming a js class switcher to show different currency symbols
+ */
+form > div {
+  margin: 1em 0 1.5em;
+  position: relative;
+}
+form input, form select {
+  display: block;
+  width: 100%;
+  border-radius: .25em;
+  border: 1px solid grey;
+  padding: .5em;
+}
+form label[for="value"]:after {
+  content: "";
+  position: absolute;
+  left: -1em;
+  top: 2.25em;
+}
+form label[for="value"].gbp:after {
+  content: "\a3";
+}
+form label[for="value"].usd:after {
+  content: "\24";
+}
+form label[for="value"].eur:after {
+  content: "\20AC";
+}
+form input[type="submit"] {
+  max-width: 150px;
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  margin: 2em auto;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+}
+form label {
+  display: block;
+  margin-bottom: .5em;
+}
+form .radios {
+  display: block;
+}
+form .radios .inputs input {
+  width: auto;
+  display: inline-block;
+}
+form .radios p {
+  width: 100%;
+}
+@media (min-width: 650px) {
+  form .radios {
+    display: flex;
+  }
+  form .radios .inputs {
+    display: block;
+    width: 100%;
+  }
+  form .radios p {
+    margin: 0;
+    width: 60%;
+  }
+}

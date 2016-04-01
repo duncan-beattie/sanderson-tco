@@ -1,0 +1,62 @@
+/* 
+ * Layout styles 
+ */
+
+*{
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.currency-cta{
+  display: block;
+  width: 100%;
+  max-width:800px;
+  border: 1px solid grey;
+  > div{
+    display: block;
+    width: 100%;
+    padding: 2em;
+    @media (max-width: 400px){
+      padding: 1em;
+    }
+    &.order{
+      background: $bg-alt;
+      color: $bg;
+    }
+    &.info{
+      h2 + p{
+        margin-bottom: 4em;
+      }
+      h3{
+        &:before{
+          width: 0; 
+          height: 0; 
+          border-top: .5em solid transparent;
+          border-bottom: .5em solid transparent;
+          border-left: .5em solid grey; 
+          content: '';
+          display: inline-block;
+          margin: 0 .25em 0 -.75em;
+        }
+      }
+      p.terms{
+        font-size: .625em;
+        margin-top: 6em;
+      }
+    }
+  }
+  @media (min-width: 650px){
+    width: 95vw;
+    margin: 2em auto;
+    display: flex;
+    > div{
+      display: inline-block;
+      width: 55%;
+      &.order{
+        width: 45%;
+      }
+    }
+  }
+}
